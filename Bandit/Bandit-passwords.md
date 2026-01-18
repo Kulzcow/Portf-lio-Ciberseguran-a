@@ -1,35 +1,67 @@
 >Todas as senhas são utilizadas para o walkthrough Bandit. Não é recomendado utilizá-las. Se passou, e perdeu a senha, use isso como repositório. OBS: As senhas podem mudar conforme o tempo.
 
 bandit 1 ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If
+
 bandit 2 263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+
 bandit 3 MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx
+
 bandit 4 2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ
+
 bandit 5 4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw
+
 bandit 6 HWasnPhtq9AVKe0dmk45nxy20cvUa6EG
+
 bandit 7 morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj
+
 bandit 8 dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc
+
 bandit 9 4CKMh1JI91bUIZZPXDqGanal4xvAg0JM
+
 bandit 10 FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey
+
 bandit 11 dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
+
 bandit 12 7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4
+
 bandit 13 FO5dwFsc0cbaIiH0h8J2eUks2vdTDwAn
+
 bandit 14 sshkey.private (MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS)
+
 bandit 15 8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo
+
 bandit 16 kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx
+
 bandit 17 sshkey17.private
+
 bandit 18 x2gLTTjFwMOhQ8oWNbMN362QKxfRqGlO
+
 bandit 19 cGWpMaKXVwDUNgPAVJbWYuGHVn9zl3j8
+
 bandit 20 0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO
+
 bandit 21 EeoULMCra2q0dSkYj561DX7s1CpBuOBt
+
 bandit 22 tRae0UfB9v0UzbCdn9cY0gQnds9GF58Q
+
 bandit 23 0Zf11ioIjMVN551jX3CmStKLYqjk54Ga
+
 bandit 24 gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8
+
 bandit 25 iCi86ttT4KSNe1armKiwbQNmB3YJP3q4
+
 bandit 26 s0773xxkk0MXfdqOfPRVr9L3jJBUOgCZ
+
 bandit 27 upsNCc7vzaRDx6oZC6GiR6ERwe1MowGB
+
 bandit 28 Yz9IpL0sBcCeuG7m9uQFt8ZNpS4HZRcN
+
 bandit 29 4pT1t5DENaYuqnqvadYs1oE4QLCdjmJ7
+
 bandit 30 qp30ex3VLz5MDG1n91YowTv4Q8l7CDZL
+
 bandit 31 fb5S2xb7bRyFmAvQYQGEqsbhVyJqhnDy
+
 bandit 32 3O9RfhqyAlVBEZpVb6LYStshZoqoSx5K
+
 bandit 33 tQdtbs5D5i2vJwkO8mEyYEyTL8izoeJ0
