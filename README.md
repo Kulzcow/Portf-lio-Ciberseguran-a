@@ -40,7 +40,7 @@
 
 <h2 align="center"><strong>Krypton</strong></h2>
 
-<p align="center"><img src="https://img.shields.io/badge/Progresso-33%25-orange"></p>
+<p align="center"><img src="https://img.shields.io/badge/Progresso-66%25-yellow"></p>
 <br>
 
 <h2 align="center"><strong>Leviathan</strong></h2>

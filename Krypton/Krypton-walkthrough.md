@@ -63,3 +63,96 @@ ___
 
 >Muito bem. Você passou de uma cifra fácil de substituição. A maior fraqueza de uma cifra de substituição é o uso repetido de uma *key* fácil. No último nível...
 >Nesse exemplo, o mecanismo da cifra não vai estar disponível para você, o *attacker*. A senha do próximo nível está em `krypton4`.
+
+Aqui aprendemos sobre interpretação de cifras e análise de frequência.
+
+Nós nos deparamos com os arquivos `found1` `found2` e `found3`, também com o `README` que fala o enunciado, `HINT1` e `HINT2`, e finalmente a nosso arquivo com a cifra, `krypton4`.
+
+Abrindo as dicas, ele fala que umas letras em inglês são mais proeminentes que outras, também diz que "análise de frequência é sua amiga".
+
+**O que é Análise de Frequência?**
+
+Com uma pesquisa no Google, podemos ver que no mundo de criptografia, nada mais é que a análise de padrões frequentes em um item; seja uma cifra, um script, entre outras coisas. Primeiramente, nós iremos ver a frequência das diversas letras que vemos se formando nos arquivos `found`.
+
+Pesquisando pelas manpages e fóruns, a melhor maneira que encontrei de realizar uma busca simples de frequência é com o comando:
+
+```bash
+cat found1 found2 found3 | fold -w1 | sort | uniq -c | sort -nr
+```
+
+Esses sufixos são bem simples. `fold -w1` é utilizado para manter cada palavra em uma linha. `sort` como visto no Bandit, irá agrupar as letras similares juntas, `uniq -c` irá contá-las, e o sufixo `-nr` do `sort` mostra as letras mais frequentes primeiro. Aparecerá assim:
+
+```bash
+704
+456 S
+340 Q
+301 J
+257 U
+246 B
+240 N
+227 G
+227 C
+210 D
+132 Z
+130 V
+129 W
+86 M
+84 Y
+75 T
+71 X
+67 K
+64 E
+60 L
+55 A
+28 F
+19 I
+12 O
+4 R
+4 H
+2 P
+```
+essas são as letras mais frequentes ordenadas, então assim caracterizadas em ordem: `S Q J U B N G C D Z V W M Y T X K E L A F I O R H P`, vista pelo número (quantidade) em que essas letras aparecem.
+
+Com isso, temos nosso 'alfabeto' de frequência. Utilizo a outra dica para pesquisar no Google quais são as letras mais frequentes na lingua inglesa, que são de acordo com a tabela de frequência de Cornell: `E T A O I N S R H D L U C M F Y W G P B V K X Q J Z`.
+
+Finalmente, rodo o comando para traduzir a cifra como utilizei para ROT13, `tr` é o seu aliado na criptografia.
+
+```bash
+cat krypton4 | tr 'SQJUBNGCDZVWMYTXKELAFIORHP' 'ETAOINSRHDLUCMFYWGPBVKXQJZ'
+```
+
+Recebo isso: `WELLU ISEAH ELEKE LYICN MTOOW INURO BNCAE`
+
+Não, isso não foi feito errado.
+
+As dicas são somente para dar um pontapé inicial para decifrar as palavras-chave. Agora, a **análise de frequência** entra como a discernição de dados comuns e reconheciveis. Saber inglês é crucial para decifrar, utilizo contexto para começar a desvendar a palavra-chave.
+
+Vimos que na primeira parte temos `WELL`, e logo podemos pensar que está tentando dizer **WELL DONE**. Com isso, iremos mudar o alfabeto de frequência em **inglês** para decifrar. Invertemos as letras `U I S` das **letras frequentes em inglês** por `D O N`, sabemos que `E` está certo: 
+
+```bash
+# antes:
+cat krypton4 | tr 'SQJUBNGCDZVWMYTXKELAFIORHP' 'ETAOINSRHDLUCMFYWGPBVKXQJZ'
+# depois:
+cat krypton4 | tr 'SQJUBNGCDZVWMYTXKELAFIORHP' 'ETAIOSNRHULDCMFYWGPBVKXQJZ'
+```
+Recebemos:
+
+`WELLD ONEAH ELEKE LYOCS MTIIW OSDRI BSCAE`
+
+Depois, vejo que tem uma parte com letras juntas, `II` perto do `W O`, com um `S` entre o `D`. Como vemos na mesama cifra, já temos o `L L` com dupla, e deciframos as outras letras com o `WELLDONE`. Troco o `S` pelo `R`, e o `II` pelo `S`, depois invertendo o `I` e `R`. Aos poucos, verifico e tento trocar pela palavra `PASSWORD`. 
+
+```bash
+
+# antes:
+cat krypton4 | tr 'SQJUBNGCDZVWMYTXKELAFIORHP' 'ETAIOSNRHULDCMFYWGPBVKXQJZ'
+# depois:
+cat krypton4 | tr 'SQJUBNGCDZVWMYTXKELAFIORHP' 'EATSORNIHULDCPFYWGPBVKXQJZ'
+```
+
+Então:
+
+`WELLD ONETH ELEKE LYOCR PASSW ORDIS BRCTE`
+
+Troco os mais óbvios: `C` por `U`, `K` pelo `V` e finalmente `Y` pelo `F`, tendo então a resposta do nível 4.
+
+Assim aprendemos muito bem a reconhecer padrões. Não foi na primeira tentativa que consegui sozinho, e esse nível ensina sobre pesquisa e treinamento de mente para a interpretação de contexto. É complicado, mas nada impossível - tutoriais ajudam bastante, e com o tempo conseguimos adquirir essa "visão" para cifras. 
