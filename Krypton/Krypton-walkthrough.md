@@ -156,3 +156,52 @@ Então:
 Troco os mais óbvios: `C` por `U`, `K` pelo `V` e finalmente `Y` pelo `F`, tendo então a resposta do nível 4.
 
 Assim aprendemos muito bem a reconhecer padrões. Não foi na primeira tentativa que consegui sozinho, e esse nível ensina sobre pesquisa e treinamento de mente para a interpretação de contexto. É complicado, mas nada impossível - tutoriais ajudam bastante, e com o tempo conseguimos adquirir essa "visão" para cifras. 
+
+
+## Krypton 4 -> 5
+
+>Você provavelmente usou alguma forma de FA e senso comum para resolver esse...
+
+Esse nível utiliza a Cifra de Vigenère, que utiliza uma tabela de diferentes Cifras de César, de uma maneira mais simplificada. A tabela de Vigenère utiliza um alfabeto base de A a Z tanto nas linhas quanto nas colunas. Então dentro dela, o mesmo alfabeto porém repetido de uma forma que a próxima letra na linha seja a primeira. Por exemplo:
+
+```bash
+ABCDEFGH...
+BCDEFGHI...
+CDEFGHIJ...
+``` 
+Entre outros. A pessoa escreve uma frase, tipo **ATACAR O ALVO**, e então uma palavra cifra, tipo **CHAVE**, repetindo ela até o comprimento da frase. Exemplo:
+
+```bash
+ATACAROALVO
+CHAVECHAVEC
+```
+As frases para codificar na cifra, correspondem à **linha base** da tabela, enquanto a cifra em si é **coluna**.  Por exemplo, a primeira letra fica na linha **A** e coluna **C**; dando a letra **C** codificada. No todo, a frase ficará assim:
+
+```bash
+CAAXET V AGZQ
+```
+
+Sabendo a cifra, é fácil decodificar. O problema maior é fazer isso *sem* a cifra. Nesse lab do *Krypton*, só sabemos que a cifra possui **6 letras**. Para desvendar isso manualmente, teria que ser feito um script para fazer o *parse* das letras no found1, 2, e 3.
+
+Para resolver isso manualmente, seria possível escrever um script para realizar análise de frequência e testar possíveis chaves com base no tamanho conhecido.
+
+Como o desafio já fornece o tamanho da chave (6), utilizei uma ferramenta de análise de cifra de Vigenère para acelerar o processo de identificação da chave.
+
+A técnica que utilizei foi pesquisada no StackOverFlow e outros blogs, a fim de fazer a resolução de uma maneira mais eficaz.
+
+Para auxiliar na análise da cifra, utilizei a ferramenta:
+
+[dCode Vigenère Cipher Tool](https://www.dcode.fr/vigenere-cipher)
+
+**OBS: Não utilize adblocks nesse site, pois tem problemas com o decodificador.**
+
+Ele está em francês, porém com tradução do Google fica bem fácil de decifrar. Após analisar os arquivos **found1** e **found2**, identifiquei que o conteúdo cifrado relevante está no arquivo **found1**. Copio *todo* o texto dele no campo **Vigenere Cifrado**. Como sei apenas a quantidade de letras da cifra, seleciono *Saber o comprimento/tamanho da chave, número de letras:*, e coloco **6** na caixa. Aperto *DECODIFICAÇÂO* e no canto esquerdo aparece o resultado.
+
+Há diversas colunas de letra, mas o importante é o primeiro resultado sozinho ao lado, essa é a *chave*.
+
+Agora, no campo cifrado coloco a frase dentro do arquivo **krypton5**, e no método de descriptografia, coloco a chave que acabei de adquirir, na primeira opção - logo decodifico.
+
+Chave encontrada: XXXXX
+Senha para o nível Krypton5: XXXXX
+
+Finalmente, obtenho a frase para entrar no Krypton 5.
